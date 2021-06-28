@@ -48,8 +48,11 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-          git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
-          git clone https://github.com/jerrykuku/openwrt-package
+          git clone https://github.com/siropboy/sirpdboy-package
+          git clone https://github.com/jerrykuku/lua-maxminddb.git
+          git clone https://github.com/jerrykuku/luci-app-vssr.git
+          git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git  
+          # git clone https://github.com/jerrykuku/openwrt-package
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
@@ -150,7 +153,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-clamav is not set
           # CONFIG_PACKAGE_luci-app-commands is not set
           # CONFIG_PACKAGE_luci-app-cshark is not set
-          CONFIG_PACKAGE_luci-app-ddns=y
+          # CONFIG_PACKAGE_luci-app-ddns is not set
           # CONFIG_PACKAGE_luci-app-diag-core is not set
           # CONFIG_PACKAGE_luci-app-diskman is not set
           # CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs is not set
@@ -258,13 +261,14 @@ jobs:
           EOF
           # 自定义软件包:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-argon-config=y
           CONFIG_PACKAGE_luci-app-jd-dailybonus=y
           CONFIG_PACKAGE_luci-app-vssr=y
           CONFIG_PACKAGE_luci-app-advanced=y
           CONFIG_PACKAGE_luci-app-netdata=y
           CONFIG_PACKAGE_luci-app-turboacc=y
           CONFIG_PACKAGE_luci-app-koolproxyR=y
+          CONFIG_PACKAGE_luci-app-koolddns=y
+          CONFIG_PACKAGE_luci-app-adguardhome=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
