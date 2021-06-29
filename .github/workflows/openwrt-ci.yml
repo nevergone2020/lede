@@ -44,10 +44,10 @@ jobs:
           df -h
       - name: 自定义插件主题。
         run: |
-          git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
-          git clone https://github.com/kenzok8/openwrt-packages package/kenzok8
-          git clone https://github.com/kenzok8/small package/small
-          git clone https://github.com/jerrykuku/openwrt-package package/jerrykuku
+          cd package
+          git clone https://github.com/siropboy/sirpdboy-package.git
+          git clone https://github.com/kenzok8/openwrt-packages.git
+          git clone https://github.com/kenzok8/small.git
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
@@ -147,40 +147,15 @@ jobs:
           CONFIG_PACKAGE_luci-app-aliddns=y
           CONFIG_PACKAGE_luci-app-adguardhome=y
           CONFIG_PACKAGE_luci-app-serverchan=y
-          CONFIG_PACKAGE_luci-app-advancedsetting=y
           CONFIG_PACKAGE_luci-app-passwall=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
-          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks is not set
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
-          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_socks is not set
-          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_socks is not set
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
-          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun is not set
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
-          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin is not set
-          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs is not set
           CONFIG_PACKAGE_luci-app-ssr-plus=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+          CONFIG_PACKAGE_luci-app-vssr=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-atmaterial=y
-          CONFIG_PACKAGE_luci-theme-btmod=y
           CONFIG_PACKAGE_luci-theme-opentopd=y
-          CONFIG_PACKAGE_luci-theme-opentoks=y
           CONFIG_PACKAGE_luci-theme-ifit=y
           EOF
           # 常用软件包:
