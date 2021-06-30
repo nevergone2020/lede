@@ -147,6 +147,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-passwall=y
           CONFIG_PACKAGE_luci-app-ssr-plus=y
           CONFIG_PACKAGE_luci-app-vssr=y
+          CONFIG_PACKAGE_luci-app-aliddns=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
@@ -154,6 +155,8 @@ jobs:
           CONFIG_PACKAGE_luci-theme-atmaterial=y
           CONFIG_PACKAGE_luci-theme-opentopd=y
           CONFIG_PACKAGE_luci-theme-ifit=y
+          CONFIG_PACKAGE_luci-theme-opentomato=y
+          CONFIG_PACKAGE_luci-theme-opentomcat=y
           EOF
           # 常用软件包:
           cat >> .config <<EOF
