@@ -131,10 +131,8 @@ jobs:
           CONFIG_PACKAGE_luci-app-firewall=y
           CONFIG_PACKAGE_luci-app-ramfree=y
           CONFIG_PACKAGE_luci-app-samba4=y
-          CONFIG_PACKAGE_luci-app-sqm=y
           CONFIG_PACKAGE_luci-app-transmission=y
           CONFIG_PACKAGE_luci-app-vlmcsd=y
-          CONFIG_PACKAGE_luci-app-qbittorrent=y
           EOF
           # 自定义软件包:
           cat >> .config <<EOF
@@ -144,7 +142,6 @@ jobs:
           CONFIG_PACKAGE_luci-app-turboacc=y
           CONFIG_PACKAGE_luci-app-koolproxyR=y
           CONFIG_PACKAGE_luci-app-koolddns=y
-          CONFIG_PACKAGE_luci-app-aliddns=y
           CONFIG_PACKAGE_luci-app-adguardhome=y
           CONFIG_PACKAGE_luci-app-serverchan=y
           CONFIG_PACKAGE_luci-app-passwall=y
